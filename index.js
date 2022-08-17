@@ -1,13 +1,11 @@
 function hasTargetSum(array, target) {
   for(let a = 0; a < array.length; a++) {
-    if(array[a] < target) {
       for(let b = 0; b < array.length; b++) {
-        if(a !== b && array[a] < target) {
+        if(a !== b) {
           if(array[a] + array[b] === target) return true
         }
       }
     }
-  }
   return false
 }
 
@@ -24,10 +22,10 @@ function hasTargetSum(array, target) {
   
 
   basicaly i need to iterate over each element in an array we can call that element A
-    if that cerain elememt (A) is greater than the target than we can skip over it
+    if that cerain elememt (A) is less than the target proceed
   than add that current element (A), knowing its under target, to every other element (B) in the array by iterating over it again
-    if elememt (B) is greater than the target than we can skip over it
-    if element (B) is the current element (A) we are on skip over it.
+    IF element (B) is not the current element (A) AND
+    elememt (B) is greater than the target than we can skip over it
   once we know its appropriate (both conditions met) add the two elements and compare them against the target.
     if they equal in value, return true.
   
